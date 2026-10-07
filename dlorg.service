@@ -1,0 +1,10 @@
+[Unit]
+Description=Downloads organizer
+
+[Service]
+ExecStart=/bin/bash /home/admin/dlorg_ludvig_hoffman/dlorg
+Restart=always
+User=admin
+
+[Install]
+WantedBy=default.target
