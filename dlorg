@@ -2,15 +2,15 @@
 
 DOWNLOADS="$HOME/Downloads"
 
-mkdir -p "$DOWNLOADS/text"
-mkdir -p "$DOWNLOADS/docs"
-mkdir -p "$DOWNLOADS/images"
-mkdir -p "$DOWNLOADS/pdfs"
-mkdir -p "$DOWNLOADS/videos"
-mkdir -p "$DOWNLOADS/archives"
-mkdir -p "$DOWNLOADS/other"
-
 while true; do
+
+    mkdir -p "$DOWNLOADS/text"
+    mkdir -p "$DOWNLOADS/docs"
+    mkdir -p "$DOWNLOADS/images"
+    mkdir -p "$DOWNLOADS/pdfs"
+    mkdir -p "$DOWNLOADS/videos"
+    mkdir -p "$DOWNLOADS/archives"
+    mkdir -p "$DOWNLOADS/other"
 
     for file in "$DOWNLOADS"/*; do
         if [[ ! -f "$file" ]]; then
