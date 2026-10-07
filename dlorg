@@ -10,32 +10,37 @@ mkdir -p "$DOWNLOADS/videos"
 mkdir -p "$DOWNLOADS/archives"
 mkdir -p "$DOWNLOADS/other"
 
-for file in "$DOWNLOADS"/*; do
-    if [[ ! -f "$file" ]]; then
-        continue
-    fi
+while true; do
 
-    case "$file" in
-        *.txt)
-            mv "$file" "$DOWNLOADS/text/"
-            ;;
-        *.pdf)
-            mv "$file" "$DOWNLOADS/pdfs/"
-            ;;
-        *.jpg|*.jpeg|*.png)
-            mv "$file" "$DOWNLOADS/images/"
-            ;;
-        *.doc|*.docx)
-            mv "$file" "$DOWNLOADS/docs/"
-            ;;
-        *.mp4|*.mov)
-            mv "$file" "$DOWNLOADS/videos/"
-            ;;
-        *.zip|*.tar|*.gz)
-            mv "$file" "$DOWNLOADS/archives/"
-            ;;
-        *)
-            mv "$file" "$DOWNLOADS/other/"
-            ;;
-    esac
+    for file in "$DOWNLOADS"/*; do
+        if [[ ! -f "$file" ]]; then
+            continue
+        fi
+
+        case "$file" in
+            *.txt)
+                mv "$file" "$DOWNLOADS/text/"
+                ;;
+            *.pdf)
+                mv "$file" "$DOWNLOADS/pdfs/"
+                ;;
+            *.jpg|*.jpeg|*.png)
+                mv "$file" "$DOWNLOADS/images/"
+                ;;
+            *.doc|*.docx)
+                mv "$file" "$DOWNLOADS/docs/"
+                ;;
+            *.mp4|*.mov)
+                mv "$file" "$DOWNLOADS/videos/"
+                ;;
+            *.zip|*.tar|*.gz)
+                mv "$file" "$DOWNLOADS/archives/"
+                ;;
+            *)
+                mv "$file" "$DOWNLOADS/other/"
+                ;;
+        esac
+    done
+
+    sleep 2
 done
